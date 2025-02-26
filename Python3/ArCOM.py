@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
 import numpy as np
-import serial
+import serial #THIS PACKAGE IS PYSERIAL NOT SERIAL. PIP UNINSTALL SERIAL. PIP INSTALL PYSERIAL. IMPORT SERIAL. WILL NOT WORK IF SERIAL IS PIP INSTALLED.
 
 class ArCOMObject(object):
     def __init__(self, serialPortName, baudRate):
@@ -26,7 +26,7 @@ class ArCOMObject(object):
         self.typeNames = ('uint8', 'int8', 'char', 'uint16', 'int16', 'uint32', 'int32')
         self.typeBytes = (1, 1, 1, 2, 2, 4, 4)
         self.typeSymbols = ('B', 'b', 'c', 'H', 'h', 'L', 'l')
-        self.serialObject = serial.Serial(serialPortName, baudRate, timeout=1)
+        self.serialObject = serial.Serial(serialPortName, baudRate, timeout=1) 
     def open(self, serialPortName, baudRate):
         self.serialObject = serial.Serial(serialPortName, baudRate, timeout=1)
     def close(self):
